@@ -1,1 +1,17 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/university_management_db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin
+  jpa:
+    open-in-view: false
+  security:
+    user:
+      name: admin
+      password: admin

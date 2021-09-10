@@ -20,11 +20,10 @@ create table account
 
 create unique index account_email_uid on account(email);
 
-create table admin
+create table dean
 (
-    account_id int not null references account(id)
+    account_id int primary key references account(id)
 );
-
 
 create table refresh_token
 (
@@ -41,29 +40,39 @@ create table refresh_token
 
 create table students_group
 (
-    id smallint not null,
+    id int primary key,
     name text not null
 );
 
 create table lecturer
 (
-    account_id int not null references account(id)
+    account_id int primary key references account(id)
 );
 
 create table student
 (
-    account_id int not null references account(id),
-    group_id smallint not null references students_group(id)
+    account_id int primary key references account(id),
+    group_id int not null references students_group(id)
 );
 
 create table subject
 (
-    id smallserial not null,
+    id serial primary key,
     title text not null
 );
 
-create table lecturer_lecture_subject
+create table course
 (
-    lecturer_id int not null references lecturer(account_id),
-    subject_id smallint not null references subject(id)
+    id bigserial primary key,
+    lecturer_id int not null references lecturer(account_id) on delete cascade,
+    subject_id smallint not null references subject(id)on delete cascade
 );
+
+create table grade
+(
+    id bigserial primary key,
+    course_id int not null references course(id) on delete cascade,
+    student_id int not null references student(account_id) on delete cascade,
+    value int check ( (value > 0) and (value <= 100) )
+);
+
