@@ -1,4 +1,4 @@
-package com.ums.model.account;
+package com.ums.model.entity.account;
 
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;

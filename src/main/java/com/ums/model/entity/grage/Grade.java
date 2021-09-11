@@ -1,7 +1,7 @@
-package com.ums.model.grage;
+package com.ums.model.entity.grage;
 
-import com.ums.model.course.Course;
-import com.ums.model.student.Student;
+import com.ums.model.entity.course.Course;
+import com.ums.model.entity.student.Student;
 import lombok.Data;
 import javax.persistence.*;
 

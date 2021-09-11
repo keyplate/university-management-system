@@ -1,7 +1,7 @@
-package com.ums.model.lecturer;
+package com.ums.model.entity.lecturer;
 
-import com.ums.model.account.Account;
-import com.ums.model.course.Course;
+import com.ums.model.entity.account.Account;
+import com.ums.model.entity.course.Course;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;

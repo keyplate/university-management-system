@@ -1,6 +1,6 @@
-package com.ums.model.dean;
+package com.ums.model.entity.dean;
 
-import com.ums.model.account.Account;
+import com.ums.model.entity.account.Account;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 

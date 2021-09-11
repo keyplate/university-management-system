@@ -1,7 +1,7 @@
 package com.ums.repository;
 
-import com.ums.model.account.Account;
-import com.ums.model.account.AccountStatus;
+import com.ums.model.entity.account.Account;
+import com.ums.model.entity.account.AccountStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

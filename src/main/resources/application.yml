@@ -10,8 +10,9 @@ spring:
     username: postgres
     password: admin
   jpa:
-    open-in-view: false
+    open-in-view: true
   security:
     user:
-      name: admin
-      password: admin
+      name: user
+      password: user
+      roles: ROLE_ADMIN

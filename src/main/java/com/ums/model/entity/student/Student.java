@@ -1,8 +1,8 @@
-package com.ums.model.student;
+package com.ums.model.entity.student;
 
-import com.ums.model.account.Account;
-import com.ums.model.grage.Grade;
-import com.ums.model.group.StudentGroup;
+import com.ums.model.entity.account.Account;
+import com.ums.model.entity.grage.Grade;
+import com.ums.model.entity.group.StudentGroup;
 import lombok.Data;
 import javax.persistence.*;
 import java.util.Set;

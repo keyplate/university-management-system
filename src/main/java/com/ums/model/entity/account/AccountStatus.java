@@ -1,4 +1,4 @@
-package com.ums.model.account;
+package com.ums.model.entity.account;
 
 
 public enum AccountStatus {

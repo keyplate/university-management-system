@@ -1,4 +1,4 @@
-package com.ums.model.account.request;
+package com.ums.model.entity.account.request;
 
 import lombok.Data;
 
@@ -16,4 +16,14 @@ public class SaveAccountRequest {
     @NotBlank(message = "Password can't be empty")
     @NotNull
     String password;
+
+    @NotBlank(message = "First name can't be empty")
+    @NotNull
+    String firstName;
+
+    @NotBlank(message = "Last name can't be empty")
+    @NotNull
+    String lastName;
+
+
 }

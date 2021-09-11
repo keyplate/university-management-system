@@ -1,7 +1,7 @@
-package com.ums.model.group;
+package com.ums.model.entity.group;
 
 import lombok.Data;
-import com.ums.model.student.Student;
+import com.ums.model.entity.student.Student;
 
 import javax.persistence.*;
 import java.util.Set;

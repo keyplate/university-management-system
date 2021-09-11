@@ -1,7 +1,7 @@
-package com.ums.model.course;
+package com.ums.model.entity.course;
 
-import com.ums.model.lecturer.Lecturer;
-import com.ums.model.subject.Subject;
+import com.ums.model.entity.lecturer.Lecturer;
+import com.ums.model.entity.subject.Subject;
 import lombok.Data;
 import javax.persistence.*;
 
