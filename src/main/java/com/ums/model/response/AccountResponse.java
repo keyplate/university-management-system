@@ -1,4 +1,4 @@
-package com.ums.model.entity.account.AccountResponse;
+package com.ums.model.response;
 
 import com.ums.model.entity.account.Account;
 import com.ums.model.entity.account.AccountStatus;
@@ -6,6 +6,7 @@ import lombok.Data;
 
 @Data
 public class AccountResponse {
+
     protected Integer id;
     protected String email;
     protected String firstName;

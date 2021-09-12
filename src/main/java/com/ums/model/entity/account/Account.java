@@ -29,5 +29,5 @@ public class Account {
 
     @Column(nullable = false)
     @Enumerated(EnumType.ORDINAL)
-    private AccountStatus status;
+    private AccountStatus status = AccountStatus.ACTIVE;
 }

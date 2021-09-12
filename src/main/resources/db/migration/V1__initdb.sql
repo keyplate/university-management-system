@@ -5,8 +5,8 @@ create table account_status
 );
 
 insert into account_status values
-(1, 'active'),
-(2, 'suspended');
+(0, 'active'),
+(1, 'suspended');
 
 create table account
 (
@@ -22,7 +22,7 @@ create unique index account_email_uid on account(email);
 
 create table dean
 (
-    account_id int primary key references account(id)
+    account_id int primary key references account(id) on delete cascade
 );
 
 create table refresh_token
@@ -40,19 +40,19 @@ create table refresh_token
 
 create table students_group
 (
-    id int primary key,
+    id serial primary key,
     name text not null
 );
 
 create table lecturer
 (
-    account_id int primary key references account(id)
+    account_id int primary key references account(id) on delete cascade
 );
 
 create table student
 (
-    account_id int primary key references account(id),
-    group_id int not null references students_group(id)
+    account_id int primary key references account(id) on delete cascade ,
+    group_id int not null references students_group(id) on delete set null
 );
 
 create table subject

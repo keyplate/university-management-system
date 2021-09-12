@@ -1,12 +1,14 @@
-package com.ums.model.entity.student;
+package com.ums.model.response;
 
-import com.ums.model.entity.account.AccountResponse.AccountResponse;
+import com.ums.model.entity.student.Student;
+import lombok.Data;
 
-public class StudentResponse extends AccountResponse{
+@Data
+public class SaveStudentResponse extends AccountResponse{
     private String groupName;
 
-    public static StudentResponse studentResponse(Student student) {
-        StudentResponse responseObject = new StudentResponse();
+    public static SaveStudentResponse studentResponse(Student student) {
+        SaveStudentResponse responseObject = new SaveStudentResponse();
         responseObject.id = student.getId();
         responseObject.email = student.getEmail();
         responseObject.firstName = student.getFirstName();

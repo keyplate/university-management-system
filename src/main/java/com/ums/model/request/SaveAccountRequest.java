@@ -1,7 +1,6 @@
-package com.ums.model.entity.account.request;
+package com.ums.model.request;
 
 import lombok.Data;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -14,15 +13,12 @@ public class SaveAccountRequest {
     String email;
 
     @NotBlank(message = "Password can't be empty")
-    @NotNull
     String password;
 
     @NotBlank(message = "First name can't be empty")
-    @NotNull
     String firstName;
 
     @NotBlank(message = "Last name can't be empty")
-    @NotNull
     String lastName;
 
 

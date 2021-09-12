@@ -6,5 +6,9 @@ import java.util.Set;
 
 public interface SubjectRepository extends JpaRepository<Subject, Integer> {
 
-    Set<Subject> findSubjectsByTitle(String title);
+    Subject findSubjectByTitle(String title);
+
+    boolean existsByTitle(String title);
+
+    void deleteSubjectByTitle(String title);
 }

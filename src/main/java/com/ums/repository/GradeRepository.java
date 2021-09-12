@@ -1,12 +1,16 @@
 package com.ums.repository;
 
-import com.ums.model.entity.grage.Grade;
+import com.ums.model.entity.course.Course;
+import com.ums.model.entity.grade.Grade;
 import com.ums.model.entity.student.Student;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Set;
 
 public interface GradeRepository extends JpaRepository<Grade, Long> {
 
-    Set<Grade> findGradesByStudent(Student student);
+    Page<Grade> findGradesByStudent(Student student, Pageable pageable);
+
+    Grade findGradeByStudentAndAndCourse(Student student, Course course);
 }

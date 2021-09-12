@@ -12,4 +12,8 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     Set<Course> findCoursesByLecturer(Lecturer lecturer);
 
     Set<Course> findCoursesBySubject(Subject subject);
+
+    boolean existsCourseByLecturerAndSubject(Lecturer lecturer, Subject subject);
+
+    Course findCoursesByLecturerAndSubject(Lecturer lecturer, Subject subject);
 }

@@ -1,4 +1,4 @@
-package com.ums.model.entity.grage;
+package com.ums.model.entity.grade;
 
 import com.ums.model.entity.course.Course;
 import com.ums.model.entity.student.Student;

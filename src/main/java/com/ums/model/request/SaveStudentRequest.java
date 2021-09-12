@@ -1,8 +1,6 @@
-package com.ums.model.entity.student;
+package com.ums.model.request;
 
-import com.ums.model.entity.account.request.SaveAccountRequest;
 import lombok.Data;
-
 import javax.validation.constraints.NotBlank;
 
 @Data
