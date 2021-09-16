@@ -39,7 +39,6 @@ public class DeanService {
         return DeanResponse.deanResponse(dean);
     }
 
-
     @Transactional
     public void deleteDean(String email) {
         if (!deanRepository.existsByEmail(email)) {

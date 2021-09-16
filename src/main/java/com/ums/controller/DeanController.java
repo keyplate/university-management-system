@@ -3,6 +3,7 @@ package com.ums.controller;
 import com.ums.model.request.*;
 import com.ums.model.response.*;
 import com.ums.service.entity.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -48,6 +49,7 @@ public class DeanController {
     }
 
     @PostMapping("/create_dean")
+    @ResponseStatus(HttpStatus.CREATED)
     public DeanResponse createDean(@RequestBody @Valid SaveDeanRequest deanRequest) {
         return deanService.create(deanRequest);
     }

@@ -1,6 +1,5 @@
 package com.ums.controller;
 
-import com.ums.model.entity.student.Student;
 import com.ums.model.request.SaveStudentRequest;
 import com.ums.model.response.GradeResponse;
 import com.ums.model.response.StudentResponse;

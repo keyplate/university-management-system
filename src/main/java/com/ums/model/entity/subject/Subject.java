@@ -2,7 +2,6 @@ package com.ums.model.entity.subject;
 
 import javax.persistence.*;
 import java.util.Set;
-
 import com.ums.model.entity.course.Course;
 import lombok.Data;
 

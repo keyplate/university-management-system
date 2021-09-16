@@ -2,7 +2,6 @@ package com.ums.model.entity.group;
 
 import lombok.Data;
 import com.ums.model.entity.student.Student;
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -20,5 +19,4 @@ public class StudentGroup {
 
     @OneToMany(mappedBy = "group")
     private Set<Student> students;
-
 }

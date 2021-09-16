@@ -5,7 +5,6 @@ import com.ums.model.entity.subject.Subject;
 import lombok.Data;
 import javax.persistence.*;
 
-
 @Table(name = "course")
 @Data
 @Entity

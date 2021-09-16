@@ -2,6 +2,7 @@ package com.ums.service.auth;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 @Service
+@Slf4j
 public class JWTService {
 
     @Value("${jwt.secret}")
@@ -54,6 +56,7 @@ public class JWTService {
     public Authentication getAuthentication(String token) {
         token = token.replace("Bearer", "").strip();
         String email = JWT.require(algorithm).build().verify(token).getSubject();
+        log.debug(email + "trying to authenticate");
         UserDetails accountDetails = accountDetailsService.loadUserByUsername(email);
         return new UsernamePasswordAuthenticationToken(accountDetails.getUsername(), null, accountDetails.getAuthorities());
     }

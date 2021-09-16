@@ -1,8 +1,5 @@
 package com.ums.controller;
 
-import com.ums.model.entity.lecturer.Lecturer;
-import com.ums.model.entity.student.Student;
-import com.ums.model.entity.subject.Subject;
 import com.ums.model.request.GradeRequest;
 import com.ums.model.request.StudentGroupRequest;
 import com.ums.model.request.UpdateGradeRequest;
