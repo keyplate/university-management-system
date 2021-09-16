@@ -1,4 +1,4 @@
-package com.ums.service;
+package com.ums.service.entity;
 
 import com.ums.exceptions.DuplicateEntityException;
 import com.ums.model.entity.group.StudentGroup;

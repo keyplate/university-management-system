@@ -15,7 +15,8 @@ create table account
     password text not null,
     first_name text not null,
     last_name text not null,
-    status int not null references account_status(id)
+    status int not null references account_status(id),
+    role text not null
 );
 
 create unique index account_email_uid on account(email);
@@ -23,19 +24,6 @@ create unique index account_email_uid on account(email);
 create table dean
 (
     account_id int primary key references account(id) on delete cascade
-);
-
-create table refresh_token
-(
-    value uuid not null primary key,
-    account_id int references account(id),
-    issued_at timestamp not null,
-    expire_ad timestamp not null,
-    next uuid,
-    constraint refresh_token_account_fk foreign key (account_id)
-        references account(id) on delete cascade,
-    constraint refresh_token_next foreign key(next)
-        references refresh_token(value) on delete cascade
 );
 
 create table students_group

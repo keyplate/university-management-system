@@ -1,12 +1,17 @@
 package com.ums.model.entity.account;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "account")
-@Data
+@Getter
+@Setter
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Account {
 
@@ -30,4 +35,8 @@ public class Account {
     @Column(nullable = false)
     @Enumerated(EnumType.ORDINAL)
     private AccountStatus status = AccountStatus.ACTIVE;
+
+    @Column(nullable = false)
+    protected String role;
+
 }

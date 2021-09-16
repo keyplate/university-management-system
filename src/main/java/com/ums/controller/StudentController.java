@@ -1,11 +1,11 @@
 package com.ums.controller;
 
-import com.ums.model.entity.grade.Grade;
+import com.ums.model.entity.student.Student;
 import com.ums.model.request.SaveStudentRequest;
 import com.ums.model.response.GradeResponse;
-import com.ums.model.response.SaveStudentResponse;
-import com.ums.service.GradeService;
-import com.ums.service.StudentService;
+import com.ums.model.response.StudentResponse;
+import com.ums.service.entity.GradeService;
+import com.ums.service.entity.StudentService;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.springdoc.core.converters.models.PageableAsQueryParam;
 import org.springframework.data.domain.Page;
@@ -32,8 +32,15 @@ public class StudentController {
         return gradeService.getStudentGrades(id, pageable);
     }
 
-    @PostMapping
-    public SaveStudentResponse createStudent(@RequestBody @Valid SaveStudentRequest studentRequest) {
+    @GetMapping("/{id}/classmates")
+    public Page<StudentResponse> getStudents(@PathVariable int id, @Parameter(hidden = true) Pageable pageable) {
+        return studentService.getClassmates(id, pageable);
+    }
+
+    @PostMapping("/create")
+    public StudentResponse createStudent(@RequestBody @Valid SaveStudentRequest studentRequest) {
         return studentService.create(studentRequest);
     }
+
+
 }

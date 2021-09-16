@@ -4,11 +4,11 @@ import com.ums.model.entity.student.Student;
 import lombok.Data;
 
 @Data
-public class SaveStudentResponse extends AccountResponse{
+public class StudentResponse extends AccountResponse{
     private String groupName;
 
-    public static SaveStudentResponse studentResponse(Student student) {
-        SaveStudentResponse responseObject = new SaveStudentResponse();
+    public static StudentResponse studentResponse(Student student) {
+        StudentResponse responseObject = new StudentResponse();
         responseObject.id = student.getId();
         responseObject.email = student.getEmail();
         responseObject.firstName = student.getFirstName();

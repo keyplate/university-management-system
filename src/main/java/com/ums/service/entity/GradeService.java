@@ -1,4 +1,4 @@
-package com.ums.service;
+package com.ums.service.entity;
 
 import com.ums.model.entity.grade.Grade;
 import com.ums.model.entity.student.Student;
