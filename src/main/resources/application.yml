@@ -10,9 +10,16 @@ spring:
     username: postgres
     password: admin
   jpa:
-    open-in-view: true
+    open-in-view: false
   security:
     user:
       name: user
       password: user
       roles: ROLE_ADMIN
+
+jwt:
+  secret: sretnaersntaeirhtehdnrat23423enih
+  expiration: 3600000
+
+
+

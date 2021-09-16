@@ -1,11 +1,12 @@
-package com.ums.service;
+package com.ums.service.entity;
 
 import com.ums.exceptions.DuplicateEntityException;
+import com.ums.model.auth.Roles;
 import com.ums.model.entity.account.AccountStatus;
 
 import com.ums.model.entity.dean.Dean;
 import com.ums.model.request.SaveDeanRequest;
-import com.ums.model.response.SaveDeanResponse;
+import com.ums.model.response.DeanResponse;
 import com.ums.repository.DeanRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,16 +26,17 @@ public class DeanService {
     }
 
     @Transactional
-    public SaveDeanResponse create(SaveDeanRequest deanRequest){
+    public DeanResponse create(SaveDeanRequest deanRequest){
         validate(deanRequest);
         Dean dean = new Dean();
         dean.setEmail(deanRequest.getEmail());
-        dean.setPassword(passwordEncoder.encode(deanRequest.getPassword())); //Don't forget to add encoding!!!
+        dean.setPassword(passwordEncoder.encode(deanRequest.getPassword()));
         dean.setFirstName(deanRequest.getFirstName());
         dean.setLastName(deanRequest.getLastName());
         dean.setStatus(AccountStatus.ACTIVE);
+        dean.setRole(Roles.ROLE_DEAN.name());
         deanRepository.save(dean);
-        return SaveDeanResponse.deanResponse(dean);
+        return DeanResponse.deanResponse(dean);
     }
 
 

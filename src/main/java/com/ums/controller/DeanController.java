@@ -1,10 +1,8 @@
 package com.ums.controller;
 
-import com.ums.model.entity.subject.Subject;
 import com.ums.model.request.*;
 import com.ums.model.response.*;
-import com.ums.repository.LecturerRepository;
-import com.ums.service.*;
+import com.ums.service.entity.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -35,7 +33,7 @@ public class DeanController {
     }
 
     @PostMapping("/create_lecturer")
-    public SaveLecturerResponse createLecturer(@RequestBody @Valid SaveLecturerRequest lecturerRequest) {
+    public LecturerResponse createLecturer(@RequestBody @Valid SaveLecturerRequest lecturerRequest) {
         return lecturerService.createLecturer(lecturerRequest);
     }
 
@@ -50,7 +48,7 @@ public class DeanController {
     }
 
     @PostMapping("/create_dean")
-    public SaveDeanResponse createDean(@RequestBody @Valid SaveDeanRequest deanRequest) {
+    public DeanResponse createDean(@RequestBody @Valid SaveDeanRequest deanRequest) {
         return deanService.create(deanRequest);
     }
 
