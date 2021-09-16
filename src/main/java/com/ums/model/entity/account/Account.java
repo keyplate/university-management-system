@@ -30,4 +30,7 @@ public class Account {
     @Column(nullable = false)
     @Enumerated(EnumType.ORDINAL)
     private AccountStatus status = AccountStatus.ACTIVE;
+
+    @Column(nullable = false)
+    protected String role;
 }
