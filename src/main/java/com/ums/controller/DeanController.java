@@ -34,6 +34,7 @@ public class DeanController {
     }
 
     @PostMapping("/create_lecturer")
+    @ResponseStatus(HttpStatus.CREATED)
     public LecturerResponse createLecturer(@RequestBody @Valid SaveLecturerRequest lecturerRequest) {
         return lecturerService.createLecturer(lecturerRequest);
     }

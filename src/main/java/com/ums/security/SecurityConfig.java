@@ -1,6 +1,9 @@
 package com.ums.security;
 
 import com.ums.model.auth.Roles;
+import com.ums.model.request.SaveDeanRequest;
+import com.ums.service.entity.DeanService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -9,15 +12,18 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 
+import javax.annotation.PostConstruct;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final JWTConfig jwtConfig;
 
-    public SecurityConfig(JWTConfig jwtConfig) {
+    public SecurityConfig(JWTConfig jwtConfig, DeanService deanService) {
         this.jwtConfig = jwtConfig;
     }
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
